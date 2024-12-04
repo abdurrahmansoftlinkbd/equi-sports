@@ -10,6 +10,7 @@ import "./swiperSlider.css";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 const SwiperSlider = () => {
   const slides = [
@@ -19,14 +20,20 @@ const SwiperSlider = () => {
       title: "Elevate Your Game with Premium Sports Equipment",
       paragraph:
         "Discover the ultimate collection of high-quality sports gear and accessories tailored to enhance your performance. Whether you are a seasoned athlete or just starting, our curated range caters to all your sporting needs with unbeatable durability and style.",
+      button: "Get Started",
     },
     {
-      image: "path-to-your-image2.jpg",
-      title: "Slide 2 Content",
+      image: "https://i.ibb.co.com/NsP3x1y/pexels-steshkawillems-1308713.jpg",
+      title: "Unleash Your Potential with Every Game",
+      paragraph:
+        "From precision gear to performance apparel, our collection is designed to push you further. Find everything you need to perform at your best, whether you're on the field, court, or track. With top brands and cutting-edge designs, we’re here to help you achieve greatness.",
     },
     {
-      image: "path-to-your-image3.jpg",
-      title: "Slide 3 Content",
+      image:
+        "https://i.ibb.co.com/PFJxPxT/cristina-anne-costello-QZKFRL-HBUw-unsplash.jpg",
+      title: "Gear Up for Success with Cutting-Edge Innovation",
+      paragraph:
+        "Stay ahead of the competition with our innovative sports equipment. From high-tech training tools to durable gear, our products are designed to elevate your performance. Explore our range and gear up for the next level in your athletic journey.",
     },
   ];
 
@@ -45,7 +52,6 @@ const SwiperSlider = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="relative ">
-              {/* Background Image */}
               <img
                 src={slide.image}
                 alt=""
@@ -54,12 +60,22 @@ const SwiperSlider = () => {
 
               <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-900 to-transparent opacity-70"></div>
 
-              <h1 className="absolute inset-0 top-10 text-white text-2xl sm:text-4xl font-extraboldbold">
+              <h1 className="absolute inset-0 top-36 left-14 text-white w-2/3 text-5xl font-bold">
                 {slide.title}
               </h1>
-              <p className="absolute inset-0  text-white  ">
+              <p className="absolute inset-0 top-[17rem] left-14 w-3/5 text-white  ">
                 {slide.paragraph}
               </p>
+              {slide?.button ? (
+                <Link
+                  to="/allSportsEquipment"
+                  className="absolute inset-0 top-[42%] left-14 w-40 bg-primary border-primary hover:bg-light hover:border-light text-white btn"
+                >
+                  {slide?.button}
+                </Link>
+              ) : (
+                ""
+              )}
             </div>
           </SwiperSlide>
         ))}

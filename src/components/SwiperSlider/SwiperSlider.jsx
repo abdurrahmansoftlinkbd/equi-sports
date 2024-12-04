@@ -31,7 +31,7 @@ const SwiperSlider = () => {
     {
       image:
         "https://i.ibb.co.com/PFJxPxT/cristina-anne-costello-QZKFRL-HBUw-unsplash.jpg",
-      title: "Gear Up for Success with Cutting-Edge Innovation",
+      title: "Gear Up for Success with Cutting Edge Innovation",
       paragraph:
         "Stay ahead of the competition with our innovative sports equipment. From high-tech training tools to durable gear, our products are designed to elevate your performance. Explore our range and gear up for the next level in your athletic journey.",
     },

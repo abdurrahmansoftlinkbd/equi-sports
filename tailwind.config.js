@@ -11,10 +11,6 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
-      backgroundImage: {
-        banner1:
-          "url('https://i.ibb.co.com/q5XJ4fV/kenny-nguy-n-J97-Bz-KSPZo-U-unsplash.jpg')",
-      },
     },
   },
   plugins: [require("daisyui")],

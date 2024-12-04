@@ -66,7 +66,7 @@ const Navbar = () => {
             <Link to="/register">Register</Link>
           </ul>
         </div>
-        <Link to="/" className="text-2xl font-bold">
+        <Link to="/" className="text-3xl font-bold">
           EquiSports
         </Link>
       </div>
@@ -76,10 +76,16 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-4">
-        <Link to="/login" className="btn hidden md:flex">
+        <Link
+          to="/login"
+          className="btn hidden md:flex hover:bg-light hover:border-light hover:text-white"
+        >
           Login
         </Link>
-        <Link to="/register" className="btn hidden md:flex">
+        <Link
+          to="/register"
+          className="btn hidden md:flex hover:bg-light hover:border-light hover:text-white"
+        >
           Register
         </Link>
         <div className="avatar">

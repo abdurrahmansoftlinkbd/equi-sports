@@ -1,8 +1,10 @@
+import SwiperSlider from "../components/SwiperSlider/SwiperSlider";
+
 const Home = () => {
   return (
-    <div>
-      <h2>Home</h2>
-    </div>
+    <header className="font-poppins">
+      <SwiperSlider></SwiperSlider>
+    </header>
   );
 };
 

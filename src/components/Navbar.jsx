@@ -1,24 +1,44 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const links = (
     <>
-      <NavLink className="hover:underline" to="/">
+      <NavLink
+        className={({ isActive }) =>
+          `${isActive ? "font-bold underline" : "hover:underline font-medium"}`
+        }
+        to="/"
+      >
         Home
       </NavLink>
-      <NavLink className="hover:underline" to="allSportsEquipment">
+      <NavLink
+        className={({ isActive }) =>
+          `font-medium ${isActive ? "font-bold underline" : "hover:underline"}`
+        }
+        to="/allSportsEquipment"
+      >
         All Sports Equipment
       </NavLink>
-      <NavLink className="hover:underline" to="addEquipment">
+      <NavLink
+        className={({ isActive }) =>
+          `font-medium ${isActive ? "font-bold underline" : "hover:underline"}`
+        }
+        to="/addEquipment"
+      >
         Add Equipment
       </NavLink>
-      <NavLink className="hover:underline" to="myEquipmentList">
+      <NavLink
+        className={({ isActive }) =>
+          `font-medium ${isActive ? "font-bold underline" : "hover:underline"}`
+        }
+        to="/myEquipmentList"
+      >
         My Equipment List
       </NavLink>
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar container w-11/12 mx-auto py-4">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -39,36 +59,34 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-black"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {links}
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link to="/" className="text-2xl font-bold">
+          EquiSports
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal items-center gap-4 px-1">
           {links}
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-4">
+        <Link to="/login" className="btn hidden md:flex">
+          Login
+        </Link>
+        <Link to="/register" className="btn hidden md:flex">
+          Register
+        </Link>
+        <div className="avatar">
+          <div className="w-14 rounded-full">
+            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -8,6 +8,9 @@ export default {
         light: "#4A7FAF",
         dark: "#07375F",
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [require("daisyui")],

@@ -4,10 +4,12 @@ import Navbar from "../components/Navbar";
 const MainLayout = () => {
   return (
     <>
-      <nav>
+      <nav className="bg-primary text-white font-poppins">
         <Navbar></Navbar>
       </nav>
-      <Outlet></Outlet>
+      <div>
+        <Outlet></Outlet>
+      </div>
     </>
   );
 };

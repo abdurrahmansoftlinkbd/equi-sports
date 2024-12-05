@@ -12,14 +12,16 @@ const Login = () => {
         </div>
         <div className="card w-full max-w-sm shrink-0 shadow-2xl">
           <form className="card-body">
-            <h2 className="uppercase font-medium text-3xl">Welcome Back</h2>
+            <h2 className="uppercase text-center font-medium text-3xl">
+              Welcome Back
+            </h2>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
-                placeholder="email"
+                placeholder="Email"
                 className="input input-bordered"
                 required
               />
@@ -30,7 +32,7 @@ const Login = () => {
               </label>
               <input
                 type="password"
-                placeholder="password"
+                placeholder="Password"
                 className="input input-bordered"
                 required
               />
@@ -42,13 +44,17 @@ const Login = () => {
             </div>
             <div className="form-control">
               <button className="btn mt-3 bg-primary text-white ">Login</button>
-              <button className="btn my-3 ">
+              <div className="divider">OR</div>
+              <button className=" btn bg-base-200 hover:bg-base-100">
                 <FcGoogle className="text-2xl" />
                 Sign in with Google
               </button>
-              <p className="text-sm text-center mt-2">
+              <p className="text-sm text-center mt-3">
                 Don’t have an account?{" "}
-                <Link className="text-primary" to="/register">
+                <Link
+                  className="text-primary font-bold hover:underline"
+                  to="/register"
+                >
                   Register
                 </Link>
               </p>

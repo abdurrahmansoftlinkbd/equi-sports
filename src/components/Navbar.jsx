@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
   const links = (
@@ -37,6 +39,9 @@ const Navbar = () => {
       </NavLink>
     </>
   );
+
+  const { user, logOut } = useContext(AuthContext);
+
   return (
     <div className="navbar container w-11/12 mx-auto py-4">
       <div className="navbar-start">
@@ -76,23 +81,38 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-4">
-        <div className="avatar">
-          <div className="w-14 rounded-full">
-            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+        {user && user?.email ? (
+          <div className="avatar">
+            <div className="w-14 rounded-full">
+              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+            </div>
           </div>
-        </div>
-        <Link
-          to="/login"
-          className="btn hidden md:flex hover:bg-light hover:border-light hover:text-white"
-        >
-          Login
-        </Link>
-        <Link
-          to="/register"
-          className="btn hidden md:flex hover:bg-light hover:border-light hover:text-white"
-        >
-          Register
-        </Link>
+        ) : (
+          ""
+        )}
+        {user && user?.email ? (
+          <button
+            onClick={logOut}
+            className="btn hidden md:flex hover:bg-light hover:border-light hover:text-white"
+          >
+            Log out
+          </button>
+        ) : (
+          <>
+            <Link
+              to="/login"
+              className="btn hidden md:flex hover:bg-light hover:border-light hover:text-white"
+            >
+              Login
+            </Link>
+            <Link
+              to="/register"
+              className="btn hidden md:flex hover:bg-light hover:border-light hover:text-white"
+            >
+              Register
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );

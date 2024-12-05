@@ -20,7 +20,7 @@ const Blog = ({ blog }) => {
         <p>{description}</p>
         <div className="card-actions">
           <button className="btn bg-primary border-primary text-white hover:bg-light hover:border-light rounded-none">
-            Buy Now
+            Read More
           </button>
         </div>
       </div>

@@ -1,7 +1,7 @@
 const Accordion = () => {
   return (
     <>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center my-20">
         <div className="w-5/12">
           <img
             src="https://i.ibb.co.com/VLhd4ML/metallic-dumbbell-4-copyright.png"

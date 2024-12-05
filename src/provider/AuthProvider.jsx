@@ -6,6 +6,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.init";
+import toast from "react-hot-toast";
 
 export const AuthContext = createContext();
 
@@ -32,6 +33,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const logOut = () => {
+    toast.success("See you again soon!");
     return signOut(auth);
   };
 

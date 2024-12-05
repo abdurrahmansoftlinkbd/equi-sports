@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import { GiConsoleController } from "react-icons/gi";
 
 const Register = () => {
+  const { createNewUser, setUser } = useContext(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -9,7 +14,16 @@ const Register = () => {
     const photourl = form.photourl.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, photourl, email, password);
+
+    createNewUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+    form.reset();
   };
 
   return (

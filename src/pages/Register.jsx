@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
-import { GiConsoleController } from "react-icons/gi";
 
 const Register = () => {
   const { createNewUser, setUser } = useContext(AuthContext);

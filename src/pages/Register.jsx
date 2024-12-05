@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const { createNewUser, setUser } = useContext(AuthContext);
@@ -18,9 +19,10 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        toast.success("Welcome to EquiSports");
       })
       .catch((error) => {
-        console.log(error.message);
+        toast.error(`${error.code}`);
       });
     form.reset();
   };

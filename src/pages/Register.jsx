@@ -2,10 +2,20 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photourl = form.photourl.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, photourl, email, password);
+  };
+
   return (
-    <div className="hero-content font-poppins mt-24 flex-col lg:flex-row-reverse">
+    <div className="hero-content font-poppins my-24 flex-col lg:flex-row-reverse">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <form className="card-body">
+        <form onSubmit={handleSubmit} className="card-body">
           <h2 className="text-center text-2xl font-bold">Create an account</h2>
           <div className="form-control">
             <label className="label">

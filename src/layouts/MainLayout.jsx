@@ -11,7 +11,7 @@ const MainLayout = () => {
       <div>
         <Outlet></Outlet>
       </div>
-      <footer className="bg-primary mt-24">
+      <footer className="bg-primary">
         <Footer></Footer>
       </footer>
     </>

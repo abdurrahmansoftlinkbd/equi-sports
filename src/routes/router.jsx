@@ -10,7 +10,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -27,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/addEquipment",
         element: <AddEquipment></AddEquipment>,
+      },
+      {
+        path: "*",
+        element: <ErrorPage></ErrorPage>,
       },
     ],
   },

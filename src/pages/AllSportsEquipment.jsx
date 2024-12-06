@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllSportsEquipment = () => {
   const equipments = useLoaderData();
@@ -19,14 +19,13 @@ const AllSportsEquipment = () => {
 
   return (
     <div className="my-24 container w-11/12 mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-center">
-        All Sports Equipment
+      <h1 className="text-5xl font-bold mb-6 text-center">
+        All <span className="text-primary">Sports Equipment</span>
       </h1>
-      {/* Sort Button */}
       <div className="flex justify-end mb-4">
         <button
           onClick={sortAscending}
-          className="btn btn-outline hover:bg-light hover:border-light"
+          className="btn btn-outline text-primary border-primary hover:bg-light hover:border-light"
         >
           Sort by Price (Ascending)
         </button>
@@ -50,12 +49,13 @@ const AllSportsEquipment = () => {
                 <td>{equipment.categoryName}</td>
                 <td>${equipment.price}</td>
                 <td>
-                  <button
+                  <Link
+                    to={`/equipments/${equipment._id}`}
                     //   onClick={() => handleViewDetails(equipment.id)}
                     className="btn btn-sm bg-primary border-primary hover:bg-light hover:border-light text-white"
                   >
                     View Details
-                  </button>
+                  </Link>
                 </td>
               </tr>
             ))}

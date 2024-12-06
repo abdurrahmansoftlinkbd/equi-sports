@@ -11,6 +11,7 @@ const AddEquipment = () => {
     const price = form.price.value;
     const rating = form.rating.value;
     const customization = form.customization.value;
+    const processingTime = form.processingTime.value;
     const stockStatus = form.stockStatus.value;
 
     const addedEquipment = {
@@ -21,6 +22,7 @@ const AddEquipment = () => {
       price,
       rating,
       customization,
+      processingTime,
       stockStatus,
     };
 

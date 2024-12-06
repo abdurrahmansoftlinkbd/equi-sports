@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
 
 const Equipment = ({ equipment }) => {
   const {
-    // _id,
+    _id,
     itemName,
     photoUrl,
     categoryName,
@@ -14,7 +15,7 @@ const Equipment = ({ equipment }) => {
     stockStatus,
   } = equipment;
   return (
-    <div className="card w-full lg:w-80 bg-base-100 shadow-xl border border-gray-200 hover:shadow-2xl">
+    <div className="card w-full lg:w-96 bg-base-100 shadow-xl border border-gray-200 hover:shadow-2xl">
       <figure className="overflow-hidden">
         <img
           src={photoUrl}
@@ -56,9 +57,12 @@ const Equipment = ({ equipment }) => {
           <p className="text-gray-600 italic mt-1">{customization}</p>
         </div>
         <div className="card-actions mt-4">
-          <button className="btn bg-primary border-primary text-white hover:bg-light hover:border-light btn-sm">
+          <Link
+            to={`/equipments/${_id}`}
+            className="btn bg-primary border-primary text-white hover:bg-light hover:border-light btn-sm"
+          >
             View Details
-          </button>
+          </Link>
         </div>
       </div>
     </div>

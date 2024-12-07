@@ -14,6 +14,7 @@ const Details = () => {
     customization,
     processingTime,
     stockStatus,
+    userName,
   } = details;
 
   return (
@@ -75,7 +76,7 @@ const Details = () => {
             </div>
             <div>
               <span className="font-semibold">Added By:</span>{" "}
-              {/* <span>{userName}</span> */}
+              <span>{userName}</span>
             </div>
           </div>
         </div>

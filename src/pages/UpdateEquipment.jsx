@@ -71,14 +71,14 @@ const UpdateEquipment = () => {
   };
 
   return (
-    <div className=" p-24 font-poppins">
+    <div className="container w-11/12 mx-auto my-24 font-poppins">
       <h2 className="text-4xl font-bold text-center mb-8">
         Update Your Equipment Details
       </h2>
       <form onSubmit={handleUpdateEquipment}>
         {/* 1st row */}
-        <div className="md:flex mb-8">
-          <div className=" form-control md:w-1/2">
+        <div className="md:flex gap-4 mb-8">
+          <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Item Name</span>
             </label>
@@ -92,7 +92,7 @@ const UpdateEquipment = () => {
               />
             </label>
           </div>
-          <div className=" form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Photo URL</span>
             </label>
@@ -108,8 +108,8 @@ const UpdateEquipment = () => {
           </div>
         </div>
         {/* 2nd row */}
-        <div className="md:flex mb-8">
-          <div className=" form-control md:w-1/2">
+        <div className="md:flex gap-4 mb-8">
+          <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Category Name</span>
             </label>
@@ -123,7 +123,7 @@ const UpdateEquipment = () => {
               />
             </label>
           </div>
-          <div className=" form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Description</span>
             </label>
@@ -139,8 +139,8 @@ const UpdateEquipment = () => {
           </div>
         </div>
         {/* 3rd row */}
-        <div className="md:flex mb-8">
-          <div className=" form-control md:w-1/2">
+        <div className="md:flex gap-4 mb-8">
+          <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Price</span>
             </label>
@@ -154,7 +154,7 @@ const UpdateEquipment = () => {
               />
             </label>
           </div>
-          <div className=" form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Rating</span>
             </label>
@@ -170,8 +170,8 @@ const UpdateEquipment = () => {
           </div>
         </div>
         {/* 4th row */}
-        <div className="md:flex mb-8">
-          <div className=" form-control md:w-1/2">
+        <div className="md:flex gap-4 mb-8">
+          <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Customization</span>
             </label>
@@ -185,7 +185,7 @@ const UpdateEquipment = () => {
               />
             </label>
           </div>
-          <div className=" form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Processing Time</span>
             </label>
@@ -218,8 +218,8 @@ const UpdateEquipment = () => {
           </div>
         </div>
         {/* 6th row */}
-        <div className="md:flex mb-8">
-          <div className=" form-control md:w-1/2">
+        <div className="md:flex gap-4 mb-8">
+          <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">User Name</span>
             </label>
@@ -234,7 +234,7 @@ const UpdateEquipment = () => {
               />
             </label>
           </div>
-          <div className=" form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">User Email</span>
             </label>

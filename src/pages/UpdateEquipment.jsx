@@ -53,13 +53,16 @@ const UpdateEquipment = () => {
     };
 
     // send data to server
-    fetch(`http://localhost:5000/updateEquipments/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateEquipment),
-    })
+    fetch(
+      `https://b10-a10-equi-sports-server-xi.vercel.app/updateEquipments/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateEquipment),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

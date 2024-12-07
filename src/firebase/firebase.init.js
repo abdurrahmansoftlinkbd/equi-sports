@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB5AfrCCIKRMlw9ErKqK2WY64DOZ66-sdc",
-  authDomain: "b10-a10-equi-sports-client.firebaseapp.com",
-  projectId: "b10-a10-equi-sports-client",
-  storageBucket: "b10-a10-equi-sports-client.firebasestorage.app",
-  messagingSenderId: "283334806142",
-  appId: "1:283334806142:web:52f8cf416b5e9330aaa62f",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

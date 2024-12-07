@@ -14,6 +14,7 @@ const Equipment = ({ equipment }) => {
     customization,
     stockStatus,
   } = equipment;
+
   return (
     <div className="card w-full lg:w-96 bg-base-100 shadow-xl border border-gray-200 hover:shadow-2xl">
       <figure className="overflow-hidden">
@@ -45,7 +46,7 @@ const Equipment = ({ equipment }) => {
           <div className="flex items-center space-x-2">
             <ReactStars
               count={5}
-              value={rating}
+              value={parseFloat(rating)}
               size={24}
               edit={false}
               isHalf={true}

@@ -5,7 +5,7 @@ const Blog = ({ blog }) => {
   const { title, category, commentsCount, description, image } = blog;
 
   return (
-    <div className="card card-compact w-96 rounded-none p-0">
+    <div className="card card-compact w-full lg:w-96 rounded-none p-0">
       <figure>
         <img src={image} alt={category} />
       </figure>

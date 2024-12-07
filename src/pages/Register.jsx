@@ -18,6 +18,15 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
+
+    if (!passwordRegex.test(password)) {
+      toast.error(
+        "Password must contain at least one uppercase and one lowercase letter."
+      );
+      return;
+    }
+
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;

@@ -15,7 +15,7 @@ const Blogs = () => {
       <h2 className="text-center text-6xl font-bold">
         FROM <span className="text-primary">BLOG</span>
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
+      <div className="grid gap-y-7 grid-cols-1 md:grid-cols-2 md:gap-x-7 lg:grid-cols-3 mt-12">
         {blogs.map((blog, i) => (
           <Blog key={i} blog={blog}></Blog>
         ))}

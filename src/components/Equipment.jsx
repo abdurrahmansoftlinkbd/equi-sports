@@ -16,7 +16,7 @@ const Equipment = ({ equipment }) => {
   } = equipment;
 
   return (
-    <div className="card w-full lg:w-96 bg-base-100 shadow-xl border border-gray-200 hover:shadow-2xl">
+    <div className="card w-full lg:w-80 xl:w-96 bg-base-100 shadow-xl border border-gray-200 hover:shadow-2xl">
       <figure className="overflow-hidden">
         <img
           src={photoUrl}

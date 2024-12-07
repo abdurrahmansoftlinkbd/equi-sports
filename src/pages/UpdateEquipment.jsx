@@ -1,6 +1,22 @@
 import toast from "react-hot-toast";
+import { useLoaderData } from "react-router-dom";
 
 const UpdateEquipment = () => {
+  const equipments = useLoaderData();
+
+  const {
+    _id,
+    itemName,
+    photoUrl,
+    categoryName,
+    description,
+    price,
+    rating,
+    customization,
+    processingTime,
+    stockStatus,
+  } = equipments;
+
   const handleUpdateEquipment = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -14,7 +30,7 @@ const UpdateEquipment = () => {
     const processingTime = form.processingTime.value;
     const stockStatus = form.stockStatus.value;
 
-    const addedEquipment = {
+    const updateEquipment = {
       itemName,
       photoUrl,
       categoryName,
@@ -27,17 +43,17 @@ const UpdateEquipment = () => {
     };
 
     // send data to server
-    fetch("http://localhost:5000/equipments", {
-      method: "POST",
+    fetch(`http://localhost:5000/updateEquipments/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(addedEquipment),
+      body: JSON.stringify(updateEquipment),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
-          toast.success(`${itemName} Added Successfully!`);
+        if (data.modifiedCount > 0) {
+          toast.success(`${itemName} Updated Successfully!`);
         }
       });
 
@@ -61,6 +77,7 @@ const UpdateEquipment = () => {
                 className="input input-bordered w-full"
                 type="text"
                 name="itemName"
+                defaultValue={itemName}
                 placeholder="Item Name"
               />
             </label>
@@ -74,6 +91,7 @@ const UpdateEquipment = () => {
                 className="input input-bordered  w-full"
                 type="text"
                 name="photoUrl"
+                defaultValue={photoUrl}
                 placeholder="Photo URL"
               />
             </label>
@@ -90,6 +108,7 @@ const UpdateEquipment = () => {
                 className="input input-bordered  w-full"
                 type="text"
                 name="categoryName"
+                defaultValue={categoryName}
                 placeholder="Category Name"
               />
             </label>
@@ -103,6 +122,7 @@ const UpdateEquipment = () => {
                 className="input input-bordered  w-full"
                 type="text"
                 name="description"
+                defaultValue={description}
                 placeholder="Description"
               />
             </label>
@@ -119,6 +139,7 @@ const UpdateEquipment = () => {
                 className="input input-bordered  w-full"
                 type="text"
                 name="price"
+                defaultValue={price}
                 placeholder="Price"
               />
             </label>
@@ -132,6 +153,7 @@ const UpdateEquipment = () => {
                 className="input input-bordered w-full"
                 type="text"
                 name="rating"
+                defaultValue={rating}
                 placeholder="Rating"
               />
             </label>
@@ -148,6 +170,7 @@ const UpdateEquipment = () => {
                 className="input input-bordered  w-full"
                 type="text"
                 name="customization"
+                defaultValue={customization}
                 placeholder="Customization"
               />
             </label>
@@ -161,6 +184,7 @@ const UpdateEquipment = () => {
                 className="input input-bordered w-full"
                 type="text"
                 name="processingTime"
+                defaultValue={processingTime}
                 placeholder="Processing Time"
               />
             </label>
@@ -177,6 +201,7 @@ const UpdateEquipment = () => {
                 className="input input-bordered  w-full"
                 type="text"
                 name="stockStatus"
+                defaultValue={stockStatus}
                 placeholder="Stock Status"
               />
             </label>

@@ -12,6 +12,7 @@ const Details = () => {
     price,
     rating,
     customization,
+    processingTime,
     stockStatus,
   } = details;
 
@@ -60,7 +61,7 @@ const Details = () => {
             </div>
             <div>
               <span className="font-semibold">Processing Time:</span>{" "}
-              {/* <span>{processingTime} days</span> */}
+              <span>{processingTime}</span>
             </div>
             <div>
               <span className="font-semibold">Stock Status:</span>{" "}

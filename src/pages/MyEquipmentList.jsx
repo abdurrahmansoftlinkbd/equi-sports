@@ -1,7 +1,44 @@
-import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyEquipmentList = () => {
-  const equipments = useLoaderData();
+  const allEquipments = useLoaderData();
+
+  const [equipments, setEquipments] = useState(allEquipments);
+
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/equipments/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your equipment has been deleted.",
+                icon: "success",
+              });
+              const remaining = equipments.filter(
+                (equipment) => equipment._id !== _id
+              );
+              setEquipments(remaining);
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div className="container w-11/12 mx-auto my-24 ">
@@ -44,14 +81,15 @@ const MyEquipmentList = () => {
                 </p>
               </div>
               <div className="card-actions justify-center mt-6">
-                <button
+                <Link
+                  to={`/updateEquipment/${equipment._id}`}
                   //   onClick={() => handleUpdate(equipment._id)}
                   className="btn bg-primary border-primary text-white hover:bg-light hover:border-light"
                 >
                   Update
-                </button>
+                </Link>
                 <button
-                  //   onClick={() => confirmDelete(equipment)}
+                  onClick={() => handleDelete(equipment._id)}
                   className="btn text-white btn-error"
                 >
                   Delete

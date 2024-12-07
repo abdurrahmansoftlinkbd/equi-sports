@@ -1,15 +1,15 @@
 const Accordion = () => {
   return (
     <>
-      <div className="flex justify-between items-center my-20">
-        <div className="w-5/12">
+      <div className="flex flex-col lg:flex-row justify-between items-center my-20">
+        <div className="w-full lg:w-5/12">
           <img
             src="https://i.ibb.co.com/VLhd4ML/metallic-dumbbell-4-copyright.png"
             alt=""
             className="w-full"
           />
         </div>
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           <p className="mb-4 text-sm font-medium">FAQ</p>
           <h1 className="text-5xl font-semibold mb-5">
             Customers want to know

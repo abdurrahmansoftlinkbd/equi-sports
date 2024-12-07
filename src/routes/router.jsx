@@ -9,6 +9,7 @@ import AllSportsEquipment from "../pages/AllSportsEquipment";
 import Details from "../pages/Details";
 import MyEquipmentList from "../pages/MyEquipmentList";
 import UpdateEquipment from "../pages/UpdateEquipment";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addEquipment",
-        element: <AddEquipment></AddEquipment>,
+        element: (
+          <PrivateRoute>
+            <AddEquipment></AddEquipment>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/allSportsEquipment",

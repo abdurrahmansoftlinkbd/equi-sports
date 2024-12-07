@@ -7,6 +7,7 @@ import {
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.init";
 import toast from "react-hot-toast";
+import PropTypes from "prop-types";
 
 export const AuthContext = createContext();
 
@@ -49,6 +50,10 @@ const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
+};
+
+AuthProvider.propTypes = {
+  children: PropTypes.array,
 };
 
 export default AuthProvider;

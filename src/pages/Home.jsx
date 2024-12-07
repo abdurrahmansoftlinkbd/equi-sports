@@ -3,6 +3,7 @@ import Accordion from "../components/Accordion";
 import Blogs from "../components/Blogs";
 import Equipments from "../components/Equipments";
 import SwiperSlider from "../components/SwiperSlider/SwiperSlider";
+import Categories from "../components/Categories";
 
 const Home = () => {
   const equipments = useLoaderData();
@@ -16,6 +17,7 @@ const Home = () => {
         <h2 className="text-5xl font-bold text-center mb-14">
           Sports <span className="text-primary">Equipments</span>
         </h2>
+        <Categories equipments={equipments}></Categories>
         <Equipments equipments={equipments}></Equipments>
         <Blogs></Blogs>
         <Accordion></Accordion>

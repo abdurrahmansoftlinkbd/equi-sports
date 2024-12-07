@@ -1,8 +1,12 @@
+// import { useContext } from "react";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
+// import { AuthContext } from "../provider/AuthProvider";
 
 const UpdateEquipment = () => {
   const equipments = useLoaderData();
+
+  // const { user } = useContext(AuthContext);
 
   const {
     _id,
@@ -15,6 +19,8 @@ const UpdateEquipment = () => {
     customization,
     processingTime,
     stockStatus,
+    userName,
+    userEmail,
   } = equipments;
 
   const handleUpdateEquipment = (e) => {
@@ -29,6 +35,8 @@ const UpdateEquipment = () => {
     const customization = form.customization.value;
     const processingTime = form.processingTime.value;
     const stockStatus = form.stockStatus.value;
+    const userName = form.userName.value;
+    const userEmail = form.userEmail.value;
 
     const updateEquipment = {
       itemName,
@@ -40,6 +48,8 @@ const UpdateEquipment = () => {
       customization,
       processingTime,
       stockStatus,
+      userName,
+      userEmail,
     };
 
     // send data to server
@@ -203,6 +213,39 @@ const UpdateEquipment = () => {
                 name="stockStatus"
                 defaultValue={stockStatus}
                 placeholder="Stock Status"
+              />
+            </label>
+          </div>
+        </div>
+        {/* 6th row */}
+        <div className="md:flex mb-8">
+          <div className=" form-control md:w-1/2">
+            <label className="label">
+              <span className="label-text">User Name</span>
+            </label>
+            <label>
+              <input
+                className="input input-bordered w-full"
+                type="text"
+                name="userName"
+                placeholder="User Name"
+                defaultValue={userName}
+                readOnly
+              />
+            </label>
+          </div>
+          <div className=" form-control md:w-1/2 ml-4">
+            <label className="label">
+              <span className="label-text">User Email</span>
+            </label>
+            <label>
+              <input
+                className="input input-bordered  w-full"
+                type="text"
+                name="userEmail"
+                placeholder="User Email"
+                defaultValue={userEmail}
+                readOnly
               />
             </label>
           </div>

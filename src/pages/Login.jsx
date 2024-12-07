@@ -7,7 +7,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { userLogin, setUser } = useContext(AuthContext);
+  const { userLogin, setUser, handleGoogleSignIn } = useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -28,6 +28,7 @@ const Login = () => {
       .catch((error) => {
         toast.error(`${error.code}`);
       });
+    form.reset();
   };
 
   return (
@@ -75,7 +76,10 @@ const Login = () => {
                 Login
               </button>
               <div className="divider">OR</div>
-              <button className=" btn bg-base-200 hover:bg-base-100">
+              <button
+                onClick={handleGoogleSignIn}
+                className=" btn bg-base-200 hover:bg-base-100"
+              >
                 <FcGoogle className="text-2xl" />
                 Sign in with Google
               </button>

@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  const { createNewUser, setUser } = useContext(AuthContext);
+  const { createNewUser, setUser, updateUserProfile, handleGoogleSignIn } =
+    useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +22,16 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        updateUserProfile({
+          displayName: name,
+          photoURL: photourl,
+        })
+          .then(() => {
+            navigate("/");
+          })
+          .catch((error) => {
+            toast.error(`Unable to update profile. ${error}`);
+          });
         toast.success("Welcome to EquiSports");
       })
       .catch((error) => {
@@ -85,7 +98,10 @@ const Register = () => {
               Register
             </button>
             <div className="divider">OR</div>
-            <button className="btn bg-base-200 hover:bg-base-100">
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn bg-base-200 hover:bg-base-100"
+            >
               <FcGoogle className="text-2xl" /> Signup with Google
             </button>
             <p className="text-sm text-center mt-4">

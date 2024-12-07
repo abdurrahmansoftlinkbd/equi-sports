@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AddEquipment = () => {
+  const { user } = useContext(AuthContext);
+
   const handleAddEquipment = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -13,6 +17,8 @@ const AddEquipment = () => {
     const customization = form.customization.value;
     const processingTime = form.processingTime.value;
     const stockStatus = form.stockStatus.value;
+    const userName = form.userName.value;
+    const userEmail = form.userEmail.value;
 
     const addedEquipment = {
       itemName,
@@ -24,6 +30,8 @@ const AddEquipment = () => {
       customization,
       processingTime,
       stockStatus,
+      userName,
+      userEmail,
     };
 
     // send data to server
@@ -178,6 +186,39 @@ const AddEquipment = () => {
                 type="text"
                 name="stockStatus"
                 placeholder="Stock Status"
+              />
+            </label>
+          </div>
+        </div>
+        {/* 6th row */}
+        <div className="md:flex mb-8">
+          <div className=" form-control md:w-1/2">
+            <label className="label">
+              <span className="label-text">User Name</span>
+            </label>
+            <label>
+              <input
+                className="input input-bordered w-full"
+                type="text"
+                name="userName"
+                placeholder="User Name"
+                defaultValue={user?.displayName}
+                readOnly
+              />
+            </label>
+          </div>
+          <div className=" form-control md:w-1/2 ml-4">
+            <label className="label">
+              <span className="label-text">User Email</span>
+            </label>
+            <label>
+              <input
+                className="input input-bordered  w-full"
+                type="text"
+                name="userEmail"
+                placeholder="User Email"
+                defaultValue={user?.email}
+                readOnly
               />
             </label>
           </div>

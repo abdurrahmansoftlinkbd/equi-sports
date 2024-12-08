@@ -85,8 +85,15 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-black"
           >
             {links}
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+
+            {user && user?.email ? (
+              <Link onClick={logOut}>Log out</Link>
+            ) : (
+              <>
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
+              </>
+            )}
           </ul>
         </div>
         <Link to="/" className="text-3xl font-bold">

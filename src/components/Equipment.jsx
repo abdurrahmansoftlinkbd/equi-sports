@@ -31,7 +31,7 @@ const Equipment = ({ equipment }) => {
         <p className="text-sm text-white badge bg-primary p-3">
           {categoryName}
         </p>
-        <p className="text-gray-700 text-sm my-2 line-clamp-5">{description}</p>
+        <p className="text-sm my-2 line-clamp-5">{description}</p>
         <div className="flex justify-between items-center text-sm">
           <span className=" font-semibold text-primary">Price: ${price}</span>
           <span
@@ -55,7 +55,7 @@ const Equipment = ({ equipment }) => {
             />
             <span className="text-sm text-gray-600">{rating}</span>
           </div>
-          <p className="text-gray-600 italic mt-1">{customization}</p>
+          <p className="italic mt-1">{customization}</p>
         </div>
         <div className="card-actions mt-4">
           <Link

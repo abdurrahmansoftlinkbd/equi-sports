@@ -4,6 +4,7 @@ import Blogs from "../components/Blogs";
 import Equipments from "../components/Equipments";
 import SwiperSlider from "../components/SwiperSlider/SwiperSlider";
 import Categories from "../components/Categories";
+import { Fade } from "react-awesome-reveal";
 
 const Home = () => {
   const equipments = useLoaderData();
@@ -14,12 +15,16 @@ const Home = () => {
         <SwiperSlider></SwiperSlider>
       </header>
       <main className="container w-11/12 mx-auto font-poppins mt-24">
-        <h2 className="text-5xl font-bold text-center mb-14">
-          Sports <span className="text-primary">Equipments</span>
-        </h2>
+        <Fade direction="down" triggerOnce={true}>
+          <h2 className="text-5xl font-bold text-center mb-14">
+            Sports <span className="text-primary">Equipments</span>
+          </h2>
+        </Fade>
         <Categories equipments={equipments}></Categories>
         <Equipments equipments={equipments}></Equipments>
-        <Blogs></Blogs>
+        <Fade triggerOnce={true}>
+          <Blogs></Blogs>
+        </Fade>
         <Accordion></Accordion>
       </main>
     </>

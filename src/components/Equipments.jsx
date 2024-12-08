@@ -1,13 +1,16 @@
 import PropTypes from "prop-types";
 import Equipment from "./Equipment";
+import { Fade } from "react-awesome-reveal";
 
 const Equipments = ({ equipments }) => {
   return (
-    <div className="grid justify-items-center md:gap-x-7 gap-y-7 mb-24 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      {equipments.map((equipment) => (
-        <Equipment key={equipment._id} equipment={equipment}></Equipment>
-      ))}
-    </div>
+    <Fade triggerOnce={true}>
+      <div className="grid justify-items-center md:gap-x-7 gap-y-7 mb-24 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {equipments.map((equipment) => (
+          <Equipment key={equipment._id} equipment={equipment}></Equipment>
+        ))}
+      </div>
+    </Fade>
   );
 };
 

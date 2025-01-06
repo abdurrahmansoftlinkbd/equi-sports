@@ -16,7 +16,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          `font-medium ${isActive ? "font-bold underline" : "hover:underline"}`
+          `${isActive ? "font-bold underline" : "hover:underline font-medium"}`
         }
         to="/allSportsEquipment"
       >
@@ -95,8 +95,10 @@ const Navbar = () => {
             <>
               <NavLink
                 className={({ isActive }) =>
-                  `font-medium ${
-                    isActive ? "font-bold underline" : "hover:underline"
+                  `${
+                    isActive
+                      ? "font-bold underline"
+                      : "hover:underline font-medium"
                   }`
                 }
                 to="/addEquipment"
@@ -105,8 +107,10 @@ const Navbar = () => {
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
-                  `font-medium ${
-                    isActive ? "font-bold underline" : "hover:underline"
+                  `${
+                    isActive
+                      ? "font-bold underline"
+                      : "hover:underline font-medium"
                   }`
                 }
                 to="/myEquipmentList"
@@ -115,8 +119,10 @@ const Navbar = () => {
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
-                  `font-medium ${
-                    isActive ? "font-bold underline" : "hover:underline"
+                  `${
+                    isActive
+                      ? "font-bold underline"
+                      : "hover:underline font-medium"
                   }`
                 }
                 to="/contact"

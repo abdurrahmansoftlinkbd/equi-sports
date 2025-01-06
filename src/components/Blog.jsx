@@ -7,7 +7,7 @@ const Blog = ({ blog }) => {
   return (
     <div className="card card-compact w-full lg:w-80 xl:w-96 rounded-none p-0">
       <figure>
-        <img src={image} alt={category} />
+        <img src={image} alt={category} className="h-56 w-full object-cover" />
       </figure>
       <div className="card-body pt-2">
         <div className="flex justify-between items-center">
@@ -17,7 +17,9 @@ const Blog = ({ blog }) => {
           </span>
         </div>
         <h2 className="card-title text-2xl">{title}</h2>
-        <p title={description}>{description.slice(0, 140)}...</p>
+        <p className="font-roboto" title={description}>
+          {description.slice(0, 100)}...
+        </p>
         <div className="card-actions mt-2">
           <button className="btn bg-primary border-primary text-white hover:bg-light hover:border-light rounded-none">
             Read More

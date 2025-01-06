@@ -5,7 +5,7 @@ const Categories = ({ equipments }) => {
   // const {categoryName} =
   return (
     <Fade triggerOnce={true} direction="up">
-      <div className="flex flex-wrap justify-center gap-4 mb-8">
+      <div className="flex flex-wrap font-poppins justify-center gap-4 mb-8">
         {equipments.map((equipment) => (
           <button
             key={equipment._id}

@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleAddEquipment = (e) => {
     e.preventDefault();
@@ -47,14 +49,15 @@ const AddEquipment = () => {
         if (data.insertedId) {
           toast.success(`${itemName} Added Successfully!`);
         }
+        navigate("/myEquipmentList");
       });
 
     form.reset();
   };
 
   return (
-    <div className="container w-11/12 mx-auto my-24 font-poppins">
-      <h2 className="text-4xl font-bold text-center mb-8">
+    <div className="container w-11/12 mx-auto mt-12 mb-24 font-poppins">
+      <h2 className="text-5xl font-bold text-center mb-8 uppercase">
         Add New <span className="text-primary">Equipment</span>
       </h2>
       <form onSubmit={handleAddEquipment}>

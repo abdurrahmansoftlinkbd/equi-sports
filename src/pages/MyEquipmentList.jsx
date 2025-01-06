@@ -1,11 +1,23 @@
-import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../provider/AuthProvider";
 
 const MyEquipmentList = () => {
-  const allEquipments = useLoaderData();
+  const { user } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
+  const [equipments, setEquipments] = useState([]);
 
-  const [equipments, setEquipments] = useState(allEquipments);
+  useEffect(() => {
+    fetch(
+      `https://b10-a10-equi-sports-server-xi.vercel.app/myEquipments/${user?.email}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setEquipments(data);
+        setLoading(false);
+      });
+  }, [user]);
 
   const handleDelete = (_id) => {
     Swal.fire({
@@ -42,11 +54,19 @@ const MyEquipmentList = () => {
     });
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <span className="loading loading-spinner loading-lg text-primary"></span>
+      </div>
+    );
+  }
+
   return (
-    <div className="container w-11/12 mx-auto my-24 ">
-      <h1 className="text-5xl font-bold text-primary mb-12 text-center">
+    <div className="container w-11/12 mx-auto mt-12 mb-24 ">
+      <h2 className="text-5xl font-bold font-poppins text-primary mb-12 text-center uppercase">
         My Equipment List
-      </h1>
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {equipments.map((equipment) => (
           <div key={equipment._id} className="card shadow-lg bg-base-100">

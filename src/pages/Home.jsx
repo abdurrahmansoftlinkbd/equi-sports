@@ -5,6 +5,7 @@ import Equipments from "../components/Equipments";
 import SwiperSlider from "../components/SwiperSlider/SwiperSlider";
 import Categories from "../components/Categories";
 import { Fade } from "react-awesome-reveal";
+import Subscriptions from "../components/Subscriptions";
 
 const Home = () => {
   const equipments = useLoaderData();
@@ -22,6 +23,9 @@ const Home = () => {
         </Fade>
         <Categories equipments={equipments}></Categories>
         <Equipments equipments={equipments}></Equipments>
+        <Fade triggerOnce={true}>
+          <Subscriptions></Subscriptions>
+        </Fade>
         <Fade triggerOnce={true}>
           <Blogs></Blogs>
         </Fade>

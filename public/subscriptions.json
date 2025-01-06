@@ -1,0 +1,26 @@
+[
+  {
+    "image": "https://i.ibb.co.com/mDVM7x4/fei-chao-z-Whd4t-Ie-z4-unsplash.jpg",
+    "trainingName": "Tennis Pro",
+    "trainingType": "Group Training",
+    "description": "Comprehensive tennis program covering serves, volleys, and match strategies. Equipment provided.",
+    "price": 95,
+    "duration": "30 Days"
+  },
+  {
+    "image": "https://i.ibb.co.com/tXrbdFF/jonathan-borba-zf-POelm-Dc-M-unsplash.jpg",
+    "trainingName": "CrossFit Challenge",
+    "trainingType": "Individual Training",
+    "description": "High-intensity functional training combining cardio, strength, and conditioning exercises.",
+    "price": 75,
+    "duration": "14 Days"
+  },
+  {
+    "image": "https://i.ibb.co.com/191pS16/thao-lee-SRFUTe-EZ9b-M-unsplash.jpg",
+    "trainingName": "Martial Arts",
+    "trainingType": "Group Training",
+    "description": "Learn self-defense, discipline, and foundational martial arts movements tailored to your pace.",
+    "price": 110,
+    "duration": "30 Days"
+  }
+]

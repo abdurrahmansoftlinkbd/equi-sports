@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { IoFootballOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const links = (
@@ -81,7 +82,10 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/" className="text-3xl font-bold">
-          EquiSports
+          <div className="flex items-center gap-1">
+            <IoFootballOutline className="text-4xl" />
+            <h1>EquiSports</h1>
+          </div>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

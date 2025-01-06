@@ -11,8 +11,8 @@ const Blogs = () => {
   }, []);
 
   return (
-    <div>
-      <h2 className="text-center text-6xl font-bold">
+    <div className="font-poppins">
+      <h2 className="text-center text-5xl font-bold">
         FROM <span className="text-primary">BLOG</span>
       </h2>
       <div className="grid gap-y-7 grid-cols-1 md:grid-cols-2 md:gap-x-7 lg:grid-cols-3 mt-12">

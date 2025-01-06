@@ -17,8 +17,8 @@ const Blog = ({ blog }) => {
           </span>
         </div>
         <h2 className="card-title text-2xl">{title}</h2>
-        <p>{description}</p>
-        <div className="card-actions">
+        <p title={description}>{description.slice(0, 140)}...</p>
+        <div className="card-actions mt-2">
           <button className="btn bg-primary border-primary text-white hover:bg-light hover:border-light rounded-none">
             Read More
           </button>

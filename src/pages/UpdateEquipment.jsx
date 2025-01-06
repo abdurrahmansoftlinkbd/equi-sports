@@ -1,12 +1,9 @@
-// import { useContext } from "react";
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
-// import { AuthContext } from "../provider/AuthProvider";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UpdateEquipment = () => {
   const equipments = useLoaderData();
-
-  // const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const {
     _id,
@@ -68,14 +65,15 @@ const UpdateEquipment = () => {
         if (data.modifiedCount > 0) {
           toast.success(`${itemName} Updated Successfully!`);
         }
+        navigate("/myEquipmentList");
       });
 
     form.reset();
   };
 
   return (
-    <div className="container w-11/12 mx-auto my-24 font-poppins">
-      <h2 className="text-4xl font-bold text-center mb-8">
+    <div className="container w-11/12 mx-auto mt-12 mb-24 font-poppins">
+      <h2 className="text-4xl font-bold text-center mb-8 uppercase">
         Update Your Equipment Details
       </h2>
       <form onSubmit={handleUpdateEquipment}>

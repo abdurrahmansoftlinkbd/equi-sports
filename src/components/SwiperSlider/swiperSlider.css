@@ -1,9 +1,0 @@
-.swiper {
-  height: 600px;
-}
-
-@media (min-width: 768px) {
-  .swiper {
-    height: 100%;
-  }
-}

@@ -15,11 +15,11 @@ const Subscription = ({ subscription }) => {
         />
       </figure>
       <div className="card-body pt-2">
-        <h2 className="card-title uppercase">{trainingName}</h2>
+        <h2 className="card-title text-primary uppercase">{trainingName}</h2>
         <p className="font-semibold">{trainingType}</p>
         <p className="font-roboto">{description}</p>
         <div className="flex justify-between items-center">
-          <span className="font-semibold">${price}</span>
+          <span className="font-semibold text-primary">${price}</span>
           <span className="flex items-center">
             <MdOutlineWatchLater className="mr-1 " /> {duration}
           </span>

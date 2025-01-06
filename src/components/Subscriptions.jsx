@@ -13,7 +13,7 @@ const Subscriptions = () => {
   return (
     <div className="font-poppins mb-24">
       <h2 className="text-center text-5xl font-bold uppercase">
-        Subscription Prices
+        <span className="text-primary">Subscription</span> Prices
       </h2>
       <p className="font-roboto text-center uppercase mt-3 text-sm font-light">
         Exclusive Training Packages

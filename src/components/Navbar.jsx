@@ -72,7 +72,45 @@ const Navbar = () => {
             {links}
 
             {user && user?.email ? (
-              <Link onClick={logOut}>Log out</Link>
+              <>
+                <NavLink
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? "font-bold underline"
+                        : "hover:underline font-medium"
+                    }`
+                  }
+                  to="/addEquipment"
+                >
+                  Add Equipment
+                </NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? "font-bold underline"
+                        : "hover:underline font-medium"
+                    }`
+                  }
+                  to="/myEquipmentList"
+                >
+                  My Equipment List
+                </NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? "font-bold underline"
+                        : "hover:underline font-medium"
+                    }`
+                  }
+                  to="/contact"
+                >
+                  Contact
+                </NavLink>
+                <Link onClick={logOut}>Log out</Link>
+              </>
             ) : (
               <>
                 <Link to="/login">Login</Link>
@@ -89,7 +127,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal items-center gap-6 px-1">
+        <ul className="menu menu-horizontal items-center lg:gap-2 xl:gap-6 px-1">
           {links}
           {user?.email && (
             <>
@@ -134,7 +172,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-4">
-        <label className="swap swap-rotate">
+        <label className="hidden md:inline-grid swap swap-rotate">
           <input
             type="checkbox"
             onChange={handleToggle}

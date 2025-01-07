@@ -86,24 +86,26 @@ const MyEquipmentList = () => {
                 <td>{equipment.categoryName}</td>
                 <td>${equipment.price}</td>
                 <td>
-                  <Link
-                    to={`/equipments/${equipment._id}`}
-                    className="btn btn-sm bg-primary border-primary hover:bg-light hover:border-light text-white mr-2"
-                  >
-                    View Details
-                  </Link>
-                  <Link
-                    to={`/updateEquipment/${equipment._id}`}
-                    className="btn btn-sm btn-success text-white mr-2"
-                  >
-                    Update
-                  </Link>
-                  <button
-                    onClick={() => handleDelete(equipment._id)}
-                    className="btn btn-sm text-white btn-error"
-                  >
-                    Delete
-                  </button>
+                  <div className="flex justify-start gap-2">
+                    <Link
+                      to={`/equipments/${equipment._id}`}
+                      className="btn btn-sm bg-primary border-primary hover:bg-light hover:border-light text-white"
+                    >
+                      View Details
+                    </Link>
+                    <Link
+                      to={`/updateEquipment/${equipment._id}`}
+                      className="btn btn-sm btn-success text-white"
+                    >
+                      Update
+                    </Link>
+                    <button
+                      onClick={() => handleDelete(equipment._id)}
+                      className="btn btn-sm text-white btn-error"
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}

@@ -1,14 +1,10 @@
 import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import Equipment from "../components/Equipment";
+import { BiSort } from "react-icons/bi";
 
 const AllSportsEquipment = () => {
   const equipments = useLoaderData();
-
-  //   const navigate = useNavigate();
-
-  //   const handleViewDetails = (id) => {
-  //     navigate(`/equipment/${id}`);
-  //   };
 
   const [allEquipments, setAllEquipments] = useState(equipments);
 
@@ -18,49 +14,22 @@ const AllSportsEquipment = () => {
   };
 
   return (
-    <div className="my-24 container w-11/12 mx-auto">
-      <h1 className="text-5xl font-bold mb-6 text-center">
+    <div className="mb-24 mt-12 container w-11/12 mx-auto">
+      <h2 className="text-5xl font-poppins font-bold uppercase mb-6 text-center">
         All <span className="text-primary">Sports Equipment</span>
-      </h1>
+      </h2>
       <div className="flex justify-end mb-4">
         <button
           onClick={sortAscending}
           className="btn btn-outline text-primary border-primary hover:bg-light hover:border-light"
         >
-          Sort by Price (Ascending)
+          <BiSort className="text-lg" /> Sort by Price (Ascending)
         </button>
       </div>
-      <div className="overflow-x-auto w-full">
-        <table className="table table-zebra w-full">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {allEquipments.map((equipment, i) => (
-              <tr key={equipment._id}>
-                <th>{i + 1}</th>
-                <td>{equipment.itemName}</td>
-                <td>{equipment.categoryName}</td>
-                <td>${equipment.price}</td>
-                <td>
-                  <Link
-                    to={`/equipments/${equipment._id}`}
-                    //   onClick={() => handleViewDetails(equipment.id)}
-                    className="btn btn-sm bg-primary border-primary hover:bg-light hover:border-light text-white"
-                  >
-                    View Details
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="font-poppins grid justify-items-center mb-12 md:gap-x-7 gap-y-7 grid-cols-1 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+        {allEquipments.map((equipment) => (
+          <Equipment key={equipment._id} equipment={equipment}></Equipment>
+        ))}
       </div>
     </div>
   );

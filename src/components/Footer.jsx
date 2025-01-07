@@ -1,3 +1,4 @@
+import { IoFootballOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -5,8 +6,11 @@ const Footer = () => {
     <>
       <footer className="footer text-primary-content p-10">
         <aside>
-          <Link to="/" className="text-4xl font-bold">
-            EquiSports
+          <Link to="/">
+            <div className="flex items-center gap-1">
+              <IoFootballOutline className="text-4xl font-bold mt-1" />
+              <h1 className="text-4xl font-bold">EquiSports</h1>
+            </div>
           </Link>
           <p className="mt-2 w-3/4">
             Delivering Quality Sports Gear You Can Trust Since 2024

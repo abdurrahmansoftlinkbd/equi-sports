@@ -91,7 +91,7 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal items-center gap-6 px-1">
           {links}
-          {user && (
+          {user?.email && (
             <>
               <NavLink
                 className={({ isActive }) =>

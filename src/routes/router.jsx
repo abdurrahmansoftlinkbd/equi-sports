@@ -10,6 +10,7 @@ import Details from "../pages/Details";
 import MyEquipmentList from "../pages/MyEquipmentList";
 import UpdateEquipment from "../pages/UpdateEquipment";
 import PrivateRoute from "./PrivateRoute";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -23,15 +24,15 @@ const router = createBrowserRouter([
           fetch("https://b10-a10-equi-sports-server-xi.vercel.app/equipments"),
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login></Login>,
       },
       {
-        path: "/register",
+        path: "register",
         element: <Register></Register>,
       },
       {
-        path: "/addEquipment",
+        path: "addEquipment",
         element: (
           <PrivateRoute>
             <AddEquipment></AddEquipment>
@@ -39,13 +40,13 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/allSportsEquipment",
+        path: "allSportsEquipment",
         element: <AllSportsEquipment></AllSportsEquipment>,
         loader: () =>
           fetch("https://b10-a10-equi-sports-server-xi.vercel.app/equipments"),
       },
       {
-        path: "/myEquipmentList",
+        path: "myEquipmentList",
         element: (
           <PrivateRoute>
             <MyEquipmentList></MyEquipmentList>
@@ -77,6 +78,14 @@ const router = createBrowserRouter([
           fetch(
             `https://b10-a10-equi-sports-server-xi.vercel.app/equipments/${params.id}`
           ),
+      },
+      {
+        path: "contact",
+        element: (
+          <PrivateRoute>
+            <Contact></Contact>
+          </PrivateRoute>
+        ),
       },
       {
         path: "*",

@@ -67,59 +67,48 @@ const MyEquipmentList = () => {
       <h2 className="text-5xl font-bold font-poppins text-primary mb-12 text-center uppercase">
         My Equipment List
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {equipments.map((equipment) => (
-          <div key={equipment._id} className="card shadow-lg bg-base-100">
-            <figure className="overflow-hidden">
-              <img
-                src={equipment.photoUrl}
-                alt={equipment.itemName}
-                className="h-48 w-full object-cover transition-transform duration-500 hover:scale-110"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title text-2xl font-bold text-primary">
-                {equipment.itemName}
-              </h2>
-              <p className="text-gray-600">{equipment.description}</p>
-              <div className="mt-2">
-                <p>
-                  <span className="font-semibold">Category:</span>{" "}
-                  {equipment.categoryName}
-                </p>
-                <p>
-                  <span className="font-semibold">Price:</span> $
-                  {equipment.price}
-                </p>
-                <p>
-                  <span className="font-semibold">Stock Status:</span>{" "}
-                  <span
-                    className={`${
-                      equipment.stockStatus > 0 ? "text-success" : "text-error"
-                    } font-bold`}
+      <div className="overflow-x-auto w-full">
+        <table className="table table-zebra w-full">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {equipments.map((equipment, i) => (
+              <tr key={equipment._id}>
+                <th>{i + 1}</th>
+                <td>{equipment.itemName}</td>
+                <td>{equipment.categoryName}</td>
+                <td>${equipment.price}</td>
+                <td>
+                  <Link
+                    to={`/equipments/${equipment._id}`}
+                    className="btn btn-sm bg-primary border-primary hover:bg-light hover:border-light text-white mr-2"
                   >
-                    {equipment.stockStatus > 0 ? "In Stock" : "Out of Stock"}
-                  </span>
-                </p>
-              </div>
-              <div className="card-actions justify-center mt-6">
-                <Link
-                  to={`/updateEquipment/${equipment._id}`}
-                  //   onClick={() => handleUpdate(equipment._id)}
-                  className="btn bg-primary border-primary text-white hover:bg-light hover:border-light"
-                >
-                  Update
-                </Link>
-                <button
-                  onClick={() => handleDelete(equipment._id)}
-                  className="btn text-white btn-error"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
+                    View Details
+                  </Link>
+                  <Link
+                    to={`/updateEquipment/${equipment._id}`}
+                    className="btn btn-sm btn-success text-white mr-2"
+                  >
+                    Update
+                  </Link>
+                  <button
+                    onClick={() => handleDelete(equipment._id)}
+                    className="btn btn-sm text-white btn-error"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

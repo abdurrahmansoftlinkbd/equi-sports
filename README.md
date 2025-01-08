@@ -59,18 +59,37 @@ EquiSports is a dynamic and responsive e-commerce platform dedicated to sports e
 
 - Firebase Authentication
 
-### **Libraries and Packages**:
-
-- React Router DOM
-- React Hot Toast
-- React Rating Stars Component
-- React Awesome Reveal
-- Lottie React
-
 ### **Hosting**:
 
 - Client: Firebase Hosting
 - Server: Vercel
+
+---
+
+## Dependencies
+
+The following dependencies were used in this project:
+
+```json
+"dependencies": {
+    "firebase": "^11.0.2",
+    "localforage": "^1.10.0",
+    "lottie-react": "^2.4.0",
+    "lucide": "^0.469.0",
+    "match-sorter": "^8.0.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-awesome-reveal": "^4.2.14",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.4.0",
+    "react-rating-stars-component": "^2.2.0",
+    "react-router-dom": "^7.0.2",
+    "sort-by": "^1.2.0",
+    "sweetalert2": "^11.14.5",
+    "swiper": "^11.1.15"
+}
+```
 
 ---
 

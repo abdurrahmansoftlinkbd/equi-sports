@@ -17,7 +17,7 @@ const Home = () => {
       </header>
       <main className="container w-11/12 mx-auto font-poppins mt-24">
         <Fade direction="down" triggerOnce={true}>
-          <h2 className="text-5xl font-poppins font-bold text-center mb-12 uppercase">
+          <h2 className="text-5xl font-poppins font-bold text-center mb-6 uppercase">
             Sports <span className="text-primary">Equipments</span>
           </h2>
         </Fade>
